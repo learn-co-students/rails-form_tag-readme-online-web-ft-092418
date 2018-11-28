@@ -112,3 +112,105 @@ Processing by PostsController#new as HTML
   Parameters: {"post"=>{"action"=>"create", "authenticity_token"=>"wM0kUAuTuVVs64yO9C+2FgVExLWEkXYBL4fHjMvdHb/wXQBnEIZ1bXK7fKn5neP40gN03qULwt9kcGv5dkFKWg==", "commit"=>"Submit Post", "controller"=>"posts", "description"=>"asdf", "title"=>"Rails Introduction Quiz", "utf8"=>"✓"}}
   Rendered posts/new.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2018-11-28 17:40:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/peter/.rvm/gems/ruby-2.3.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-11-28 17:47:23 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 421ms (Views: 406.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2018-11-28 17:47:23 -0500
+
+
+Started GET "/posts/new?post%5Btitle%5D=titleeee&post%5Bdescription%5D=scriiiiitppt" for ::1 at 2018-11-28 17:47:38 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"titleeee", "description"=>"scriiiiitppt"}}
+  Rendered posts/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=my+title&post%5Bdescription%5D=my+descript%0D%0A" for ::1 at 2018-11-28 17:52:25 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my descript\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=my+title&post%5Bdescription%5D=my+descript%0D%0A" for ::1 at 2018-11-28 17:52:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my descript\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 301ms (Views: 290.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-11-28 17:52:59 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my dscseoia"}, "authenticity_token"=>"iUaS3clNwyJSUaNBy/dRykFRHMaorxzdo30TSZNlDYpEnmLC4OXsVBQaXuQItj3gkgDIWnMe1y7NIWskGDZzyg=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "my title"], ["description", "my dscseoia"], ["created_at", "2018-11-28 22:52:59.174598"], ["updated_at", "2018-11-28 22:52:59.174598"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 14ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/posts" for ::1 at 2018-11-28 17:52:59 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2018-11-28 17:53:07 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=my+title&post%5Bdescription%5D=my+descript%0D%0A" for ::1 at 2018-11-28 17:53:10 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my descript\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2018-11-28 17:53:13 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"a;ldkgn"}, "authenticity_token"=>"4dbZtz8txyXNhh9aKHqa8+NORhxhedbzCuED252o/qMsDimoFoXoU4vN4v/rO/bZMB+SgLrIHQBkvXu2FvuA4w=="}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "my title"], ["description", "a;ldkgn"], ["created_at", "2018-11-28 22:53:13.539061"], ["updated_at", "2018-11-28 22:53:13.539061"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2018-11-28 17:53:13 -0500
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=my+title&post%5Bdescription%5D=my+descript%0D%0A" for ::1 at 2018-11-28 17:53:34 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my descript\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new?post%5Btitle%5D=my+title&post%5Bdescription%5D=my+descript%0D%0A" for ::1 at 2018-11-28 17:53:35 -0500
+Processing by PostsController#new as HTML
+  Parameters: {"post"=>{"title"=>"my title", "description"=>"my descript\r\n"}}
+  Rendered posts/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
